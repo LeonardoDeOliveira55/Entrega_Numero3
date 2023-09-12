@@ -16,10 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from AppStark.views import *
+from .views import *
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('app-stark/', include('AppStark.urls')),
+   
+    path('lista_servicios/', Listar_servicios, name="Listar_servicios"),
+    path('servicios/', servicios, name="servicios"),
+    path('', inicio, name= "inicio"),
+    path('lista_clientes/', Listar_clientes, name="Listar_clientes"),
+    path('registro_cliente/', registro, name="registro"),
+    path('formulario_cliente/', formulario, name="formulario_cliente"),
+    path('BusquedaServicios/', BusquedaServicio, name="BusquedaServicios"),
+    path('buscar/', Buscar, name="Buscar"),
     
 ]

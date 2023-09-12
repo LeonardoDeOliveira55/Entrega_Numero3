@@ -1,0 +1,14 @@
+{% extends 'padre.html' %}
+
+{% block Sobrefooter %}
+<br>
+<br>
+<form action="{% url 'formulario_cliente' %}" method="post">{% csrf_token %}
+
+    {{miFormulario.as_p}}
+
+    <button type="submit"> Enviar</button>
+
+
+</form>            
+{% endblock Sobrefooter %}

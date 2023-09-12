@@ -1,0 +1,14 @@
+{% extends 'padre.html' %}
+
+{% block Sobrefooter %}
+<br>
+<br>
+<form action="{% url 'Buscar' %}" method="get">
+
+    <p>Servicio: <input type="text" name="Nombre_Servicio"></p>
+
+    <button type="submit"> Buscar </button>
+
+
+</form>            
+{% endblock Sobrefooter %}
