@@ -3,6 +3,17 @@
 {% block Sobrefooter %}
 
     <p>Resultados:</p>
-    {{servicios}}
+    
+    
+    {% if servicios %}
+        <ul>            
+            {% for servicio in servicios %}
+                <li> {{servicio}} </li>
+            {% endfor %} 
+        
+        </ul>    
+
+
+    {% endif %}
 
 {% endblock Sobrefooter %}

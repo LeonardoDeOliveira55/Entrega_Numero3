@@ -50,7 +50,7 @@ def Buscar (req: HttpRequest):
     
     if req.GET['Nombre_Servicio']:
         servicio = req.GET['Nombre_Servicio']
-        nombre_servicio = Servicios.objects.get(Nombre_Servicio = servicio)
+        nombre_servicio = Servicios.objects.filter(ID_Servicio__icontains = servicio)
         return render(req, "Resultadobusqueda.html", {"servicios": nombre_servicio})
     
     else:
