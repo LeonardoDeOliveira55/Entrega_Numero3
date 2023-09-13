@@ -21,10 +21,11 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
-                <a class="navbar-brand" href="{% url 'servicios' %}">Contratar Servicios</a>
+                <a class="navbar-brand" href="{% url 'servicios' %}">Listar Servicios</a>
                 <a class="navbar-brand" href="{% url 'Listar_clientes' %}">Lista Clientes</a>
                 <a class="navbar-brand" href="{% url 'Listar_servicios' %}">Lista Servicio</a>
-                <a class="btn btn-primary" href="{% url 'formulario_cliente' %}">Registro</a>
+                <a class="navbar-brand" href="{% url 'BusquedaServicios' %}">Buscar Servicio</a>
+                <a class="btn btn-primary" href="{% url 'formulario_cliente' %}">Registrar Evento</a>
             </div>
         </nav>
         <!-- Masthead-->
@@ -45,14 +46,6 @@
                             <!-- to get an API token!-->
                             <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
                                 <!-- Email address input-->
-                                <div class="row">
-                                    <div class="col">
-                                        <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
-                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Ingrese su Email.</div>
-                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Su Email no es valido.</div>
-                                    </div>
-                                    <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
-                                </div>
                                 <!-- Submit success message-->
                                 <!---->
                                 <!-- This is what your users will see when the form-->

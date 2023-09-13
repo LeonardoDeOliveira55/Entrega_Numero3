@@ -9,7 +9,9 @@ def inicio (req):
 
 def servicios (req):
     
-    return render(req, "servicios.html")
+    lista = Contratacion.objects.all()
+    
+    return render(req, "servicios.html",{"lista_contrataciones" : lista})
 
 def registro (req):
     
@@ -26,17 +28,20 @@ def Listar_clientes(req):
     
     return render(req, "Lista_clientes.html",{"lista_clientes" : lista})
 
+
+
+
 def formulario (req):
     if req.method == 'POST':
-        miFormulario = Presupuesto(req.POST)
-        if miFormulario.is_valid(): 
-            data_formulario = Presupuesto.cleaned_data
-            registro = Contratacion( Lugar_evento= data_formulario["Direccion"], Fecha_evento= data_formulario["Fecha del Servicios"])
+        form = Presupuesto(req.POST)
+        if form.is_valid(): 
+            data_formulario = form.cleaned_data
+            registro = Contratacion( Lugar_evento= data_formulario["Lugar_evento"], Fecha_evento= data_formulario["Fecha_evento"])
             registro.save()
-        return render(req, "inicio.html")
+            return render(req, "inicio.html")
     else:
-        miFormulario = Presupuesto()
-        return render(req, "formulario.html", {"miFormulario": miFormulario})
+        form = Presupuesto()
+        return render(req, "formulario.html", {"miFormulario": form})
     
 def BusquedaServicio (req):
     return render(req, "BusquedaServicios.html")

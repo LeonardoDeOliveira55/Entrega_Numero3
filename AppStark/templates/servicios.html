@@ -2,7 +2,20 @@
 
 {% block Sobrefooter %}
 
-<h1> lista de servicios</h1>
+<h1> Proximos servicios</h1>
+
+<ul>
+
+    {% for lista in lista_contrataciones %}
+
+        <li>Fecha: {{lista.Fecha_evento}} - Direccion: {{lista.Lugar_evento}} - Señado: {{lista.Seña}}</li>
+
+    {%endfor%}
+
+
+
+</ul>
+
 
             
 {% endblock Sobrefooter %}
